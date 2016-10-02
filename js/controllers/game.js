@@ -142,7 +142,7 @@ var Game_Controller = (function() {
 
 		/**
 		  * This method should be called after the game ends and if is a losing game
-		  * This method shows the loser alert message, stops the compessor, and the player events, and 
+		  * This method shows the loser alert message, stops the compressor, and the player events, and
 		  * relaunch the current level after wait tree seconds.
 		  *
 		  * @see Compressor_Controller: gameOver method
@@ -161,7 +161,7 @@ var Game_Controller = (function() {
 
 		/**
 		  * This method removes all the information from localStorage, and
-		  * relaunchs the game, the user will feel that all the game is reset,
+		  * relaunches the game, the user will feel that all the game is reset,
 		  * the current level, current score, etc
 		  *
 		  */
@@ -172,7 +172,7 @@ var Game_Controller = (function() {
 
 		/**
 		  * This method creates a new level, and executes all the necessary code to
-		  * creates all the elemnts for the level
+		  * creates all the elements for the level
 		  *
 		  * @param inLevel (optional) <int>: The Number of the level to init if you
 		  *	don't specify it the level will be the last played, and if the user
@@ -185,7 +185,7 @@ var Game_Controller = (function() {
 			mainCanvas.innerHTML = '';
 			mainCanvas.classList.add('game_background');
 
-			// If is not level specify, get the last one played, or the fisrt one
+			// If is not level specify, get the last one played, or the first one
 			if (inLevel === undefined) {
 				currentLevel = getLevel();
 			} else {
@@ -216,7 +216,7 @@ var Game_Controller = (function() {
 
             // FIXME disabled credits
 			// showCredits();
-		}
+        }
 	};
 
 	return my;

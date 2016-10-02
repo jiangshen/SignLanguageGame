@@ -17,7 +17,7 @@
   */
 var Text_Tool = (function (inText, inFontType){
 	/**
-	  * This object containt the width and forsition of each letter into the
+	  * This object sets the width and position of each letter into the
 	  * spreadsheet image specified in pixels
 	  *
 	  */
@@ -136,15 +136,15 @@ var Text_Tool = (function (inText, inFontType){
 		' ': {
 			width: 5}};
 
-	// Will continat the main div of the text created in order to move, remove, etc all
+	// Will connect the main div of the text created in order to move, remove, etc all
 	// the sub-divs that represents the letters
 	var containerDiv = null;
 	// The current position on the X axe to draw the next character
 	var leftPadPx = 0;
 
 	/**
-	  * This method adds a leter to the main div that contents all the letters
-	  * The character shouldbe a key of the letters object
+	  * This method adds a letter to the main div that contents all the letters
+	  * The character should be a key of the letters object
 	  *
 	  * @param inChar <char>: The character to add
 	  *
@@ -207,7 +207,7 @@ var Text_Tool = (function (inText, inFontType){
 		/**
 		  * The method initialize all the elements to represent the text, and create the
 		  * main container div into the given position
-		  * If a text was specify as a paremeter of the constructor, add the text after create the div
+		  * If a text was specify as a parameter of the constructor, add the text after create the div
 		  *
 		  * @param inX <int>: The position in pixel of the X axe where the main div will be created
 		  * @param inY <int>: The position in pixel of the Y axe where the main div will be created

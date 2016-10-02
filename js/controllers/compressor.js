@@ -104,7 +104,7 @@ var Compressor_Controller = (function(inWinFunc, inGameOverFunc, inGameControlle
 
 		/**
 		  * This is the method to be called after the object is created in order to initialize all the
-		  * different elements. This method creates the animted image, set the initial position for it
+		  * different elements. This method creates the animated image, set the initial position for it
 		  * and starts the loop to move the compressor
 		  *
 		  * @param inLevel <int>: The current game level
@@ -116,7 +116,7 @@ var Compressor_Controller = (function(inWinFunc, inGameOverFunc, inGameControlle
 			level = inLevel;
 			bubblesGrid = new BubblesGrid_Controller(inWinFunc, inGameOverFunc, inGameController);
 
-			// Iinit the image object to create the element
+			// init the image object to create the element
 			compressorImg = new AnimatedImage_Tool('compressor');
 			compressorImg.init();
 			compressorImg.show();

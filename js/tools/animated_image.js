@@ -24,15 +24,15 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	// The position into the spreadsheet of the current image
 	var currentPos = inStartPosition;
 	// true if the animation goes from an image to the right images, or false to the left
-	var rigthWay = true;
-	// The interval in ms to show the diferent pictures into the spreadsheet
+	var rightWay = true;
+	// The interval in ms to show the different pictures into the spreadsheet
 	var timeInterval = inTimeInterval;
 	// A temp var to store which was the fir image played into an animation
 	var animationFrom = 0;
 	// The current position into the X axe of the top left corner of the div element
-	var curentX = 0;
+	var currentX = 0;
 	// The current position into the Y axe of the top left corner of the div element
-	var curentY = 0;
+	var currentY = 0;
 	// The las image to play into the current animation
 	var animationTo = inNumberOfImages;
 	// Will contain the current animation type, could be:
@@ -67,7 +67,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		var stop = false;
 
 		// Move the pointer to the image to show according to the current animation way
-		if (rigthWay) {
+		if (rightWay) {
 			currentPos++;
 		} else {
 			currentPos--;
@@ -77,7 +77,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		if (currentPos == animationTo) {
 			switch(animationType) {
 				case 'circle':
-					rigthWay = false;
+					rightWay = false;
 					break;
 
 				case 'loop':
@@ -102,8 +102,8 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	};
 
 	/**
-	  * Returns the tangegent os the angle that forms the tringle rectangle which
-	  * hipotenusa is defined by the two given points
+	  * Returns the tangent og the angle that forms the triangle rectangle which
+	  * hypotenuse is defined by the two given points
 	  *
 	  * @param inX <int>: The width in pixels of the X axe from the origin for the main point
 	  * @param inY <int>: The width in pixels of the Y axe from the origin for the main point
@@ -123,8 +123,8 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	  */
 	var moveLoop = function() {
 		// Calculate the triangle rectangle cathetus
-		var distanceX = Math.abs(curentX - moveInfo.targetX);
-		var distanceY = Math.abs(curentY - moveInfo.targetY);
+		var distanceX = Math.abs(currentX - moveInfo.targetX);
+		var distanceY = Math.abs(currentY - moveInfo.targetY);
 		// The angle in radians
 		var ang = Math.atan(distanceX / distanceY);
 
@@ -132,16 +132,16 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		var nextX = 0;
 		var nextY = 0;
 
-		if (curentY > moveInfo.targetY) {
-			nextY = curentY - (Math.cos(ang) * moveInfo.steep);
+		if (currentY > moveInfo.targetY) {
+			nextY = currentY - (Math.cos(ang) * moveInfo.steep);
 		} else {
-			nextY = curentY + (Math.cos(ang) * moveInfo.steep);
+			nextY = currentY + (Math.cos(ang) * moveInfo.steep);
 		}
 
-		if (curentX > moveInfo.targetX) {
-			nextX  = curentX - (Math.sin(ang) * moveInfo.steep);
+		if (currentX > moveInfo.targetX) {
+			nextX  = currentX - (Math.sin(ang) * moveInfo.steep);
 		} else {
-			nextX  = curentX + (Math.sin(ang) * moveInfo.steep);
+			nextX  = currentX + (Math.sin(ang) * moveInfo.steep);
 		}
 
 		my.setPos(nextX, nextY);
@@ -149,8 +149,8 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		// Check if the distance to the objective is less than a steep, in that case, move the element and
 		// ends the movement calling to the callback function if is defined
 		if (
-			((Math.abs(moveInfo.targetX - curentX) - moveInfo.steep) <= moveInfo.steep) &&
-			((Math.abs(moveInfo.targetY - curentY) - moveInfo.steep) <= moveInfo.steep)) {
+			((Math.abs(moveInfo.targetX - currentX) - moveInfo.steep) <= moveInfo.steep) &&
+			((Math.abs(moveInfo.targetY - currentY) - moveInfo.steep) <= moveInfo.steep)) {
 			my.setPos(moveInfo.targetX, moveInfo.targetY);
 
 			if ((moveInfo.endMovCallback !== null) && (moveInfo.endMovCallback !== undefined)){
@@ -171,7 +171,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	};
 
 	/**
-	  * This method returns a boolean true in case that a given point obkect is in a
+	  * This method returns a boolean true in case that a given point object is in a
 	  * square defined by the top left corner, and le bottom right corners points
 	  *
 	  * @param inPoint <object>: The point to check with the next structure:
@@ -184,7 +184,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	  *		topLeft: { // The top left point
 	  *			x: <int>, // The pixels of the X axe of the point
 	  *			y: <int>}, // The pixels of the Y axe of the point
-	  *		bottRight: { // The botton right point
+	  *		bottRight: { // The bottom right point
 	  *			x: <int>, // The pixels of the X axe of the point
 	  *			y: <int>}} // The pixels of the Y axe of the point
 	  *
@@ -200,8 +200,8 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	};
 
 	/**
-	  * This method uses the Pitagoras theorem in order to calculate the length of
-	  * hipotenusa that defines the two points, then calculates the distance between
+	  * This method uses the Pythagoras theorem in order to calculate the length of
+	  * hypotenuse that defines the two points, then calculates the distance between
 	  * the two points
 	  *
 	  * @param inPointOne <object>: One of the points
@@ -249,7 +249,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		  *
 		  */
 		getX: function() {
-			return curentX;
+			return currentX;
 		},
 
 		/**
@@ -260,7 +260,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		  *
 		  */
 		getY: function() {
-			return curentY;
+			return currentY;
 		},
 
 		/**
@@ -290,7 +290,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		  *
 		  * @param inElemToCheck <object>: The AnimatedImage_Tool instance to check
 		  * @param inType optional <str>: If is defined could be "circle", and will be considered
-		  *	both elemnts as circular elements, by default will be both square elements
+		  *	both elements as circular elements, by default will be both square elements
 		  *
 		  * @return <bool>: True if isset a crash, false if not
 		  *
@@ -298,7 +298,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		checkCollision: function(inElemToCheck, inType) {
 			if ((inType !== undefined) && (inType == 'circle')) {
 				// Isset a crash in case of the distance between the center of both
-				// elements is less than the sum of the radious
+				// elements is less than the sum of the radius
 				var radThis = my.getWidth() / 2;
 				var radCheck = inElemToCheck.getWidth() / 2;
 
@@ -339,7 +339,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		},
 
 		/**
-		  * This method is used for debug propouses, and adds a
+		  * This method is used for debug purposes, and adds a
 		  * text over the image
 		  *
 		  * @param inText <str>: The text to be added
@@ -358,8 +358,8 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		  *
 		  */
 		setPos: function(inX, inY) {
-			curentX = inX;
-			curentY = inY;
+			currentX = inX;
+			currentY = inY;
 			divElm.style.setProperty('top', inY + 'px');
 			divElm.style.setProperty('left', inX + 'px');
 		},
@@ -393,7 +393,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		  *			takes the last image as value
 		  *		- callback <function>: Function to call after the sequence
 		  *			ends if type is nos specify
-		  *		- localTimeInterval <int>: The time in miliseconds to leave
+		  *		- localTimeInterval <int>: The time in milliseconds to leave
 		  *			between the images are showed to the user
 		  *
 		  */
@@ -413,7 +413,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 				animationTo = inNumberOfImages;
 			}
 
-			rigthWay = (inParams.to === undefined) || (inParams.from < inParams.to);
+			rightWay = (inParams.to === undefined) || (inParams.from < inParams.to);
 
 			if (inParams.localTimeInterval !== undefined) {
 				timeInterval = inLocalTimeInterval;
@@ -452,10 +452,10 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		  * This method moves to a determinate position the element in a straight movement
 		  * doing an animation (slide).
 		  * 
-		  * @param inX <int>: The target position in pexels over the X axe from the origin
-		  * @param inY <int>: The target position in pexels over the Y axe from the origin
-		  * @param inLoopTime <int>: The time in miliseconds between steeps
-		  * @param inCallBack <function>: The callback function to be called when the elemnt
+		  * @param inX <int>: The target position in pixels over the X axe from the origin
+		  * @param inY <int>: The target position in pixels over the Y axe from the origin
+		  * @param inLoopTime <int>: The time in milliseconds between steeps
+		  * @param inCallBack <function>: The callback function to be called when the element
 		  *	are in the target position
 		  * @param inSteepPx <int>: The number of pixels that the element will be moved each steep
 		  * @param inSteepCheckFunc optional <function>: A function to be called after each steep
@@ -471,7 +471,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 
 			// Configure the internal method
 			moveInfo = {
-				origTan: getTangent(curentX, curentY, inX, inY),
+				origTan: getTangent(currentX, currentY, inX, inY),
 				targetX: inX,
 				targetY: inY,
 				steep: inSteepPx,

@@ -3,7 +3,7 @@
   * Date: 2012-03-26
   *
   * This class is used to to show alerts to the user in the middle of the pitch
-  * The alerts should be defined in the CSS file inhereting from alert class
+  * The alerts should be defined in the CSS file inherited from alert class
   * This is a singleton class that can be called as a global object
   *
   * @see css/styles.css classes:
@@ -45,7 +45,7 @@ var UserAlerts_Tool = (function() {
 	// Public scope
 	return {
 		/**
-		  * This method removes the alert message hidding the element
+		  * This method removes the alert message hiding the element
 		  *
 		  */
 		removeAlert: function() {
@@ -57,12 +57,12 @@ var UserAlerts_Tool = (function() {
 
 		/**
 		  * This method shows the corresponding alert to the user
-		  * In order to add a link at the botton right of the image, the background image should be designed
-		  * for this propouse. The button will be added at the 125, 240 px position
+		  * In order to add a link at the bottom right of the image, the background image should be designed
+		  * for this purpose. The button will be added at the 125, 240 px position
 		  *
 		  * @see css/styles.css file, "alert" classes
 		  *
-		  * @param inClass <str>: The CSS class that inherate from the alert class and shows the corresponding image
+		  * @param inClass <str>: The CSS class that inherits from the alert class and shows the corresponding image
 		  * @param inFlash optional <bool>: If true the image flashes each 3 seconds, @see flashImage method
 		  * @param inButtonText optional <str>: The text to display at the bottom right of the alert that will be showed as a link
 		  * @param inButtonFunc optional <function>: The function to call when the user do click over the text link

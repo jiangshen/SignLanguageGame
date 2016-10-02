@@ -15,7 +15,7 @@ var Player_Controller = (function(inCompressor) {
 	var penguin = null;
 	// Will contain the penguin animated image object (AnimatedImage_Tool)
 	var shooter = null;
-	// Will determinate if the user are moving the shoter to the right, left or are stopped
+	// Will determinate if the user are moving the shooter to the right, left or are stopped
 	var currentMovement = null;
 	// Will contain a pointer to the shooter "setTimeout" that handles the rotation movement
 	var rotationLoop = null;
@@ -25,7 +25,7 @@ var Player_Controller = (function(inCompressor) {
 	var chamberBubble = null;
 	// Will contain the object of the bubble in the loaded in the shooter
 	var shooterBall = null;
-	// Will contain a pointer to the timeout that launchs the ball after the hurry alert
+	// Will contain a pointer to the timeout that launches the ball after the hurry alert
 	var hurryTimeout = null;
 	// Will contain a pointer to the timeout that shows the "hurry" alert
 	var alertTimeout = null;
@@ -90,7 +90,7 @@ var Player_Controller = (function(inCompressor) {
 	};
 
 	/**
-	  * This method is all the time checking if a rotation way is setted, and in
+	  * This method is all the time checking if a rotation way is settled, and in
 	  * this case move rotate the shooter according to the way
 	  *
 	  */
@@ -109,7 +109,7 @@ var Player_Controller = (function(inCompressor) {
 			}
 		}
 
-		// Create a loop that checks all the periodically if a roation is in course
+		// Create a loop that checks all the periodically if a rotation is in course
 		rotationLoop = setTimeout(rotateObserver, config.player.rotationSpeedLoop);
 	};
 
@@ -132,15 +132,16 @@ var Player_Controller = (function(inCompressor) {
 		}
 		shooterBall = null;
 
-		// Show the corresponding penguin animatoion
+		// Show the corresponding penguin animation
 		penguin.animate({
 			from: config.player.imageAttr.shootAnimationFrom,
 			to: config.player.imageAttr.shootAnimationTo});
 
 		currentMovement = null;
 
-		// Reset the timmer that obligates the user to shoot
-		resetHurry();
+		// Reset the timer that obligates the user to shoot
+        // FIXME hurry disabled
+		// resetHurry();
 	};
 
 	/**
@@ -161,7 +162,7 @@ var Player_Controller = (function(inCompressor) {
 
 		chamberBubble.init();
 
-		// Move the bubble to the chambre position
+		// Move the bubble to the chamber position
 		chamberBubble.moveTo(
 			config.shooter.left + (config.shooter.width / 2) - (config.bubbles.width / 2),
 			config.shooter.top + config.shooter.height - 10);
@@ -185,36 +186,37 @@ var Player_Controller = (function(inCompressor) {
 			});
 	};
 
+    // FIXME hurry disabled
 	/**
 	  * This method remove all the timeouts for the hurry alert, and reinitialize
 	  * all them again
 	  *
 	  */
-	var resetHurry = function() {
-		if (hurryTimeout !== null) {
-			clearTimeout(hurryTimeout);
-		}
-		if (alertTimeout !== null) {
-			clearTimeout(alertTimeout);
-			UserAlerts_Tool.removeAlert();
-            // FIXME Disable Sound
-			// SoundManager_Tool.stop(config.player.hurrySnd);
-		}
-		hurryTimeout = setTimeout(function() {
-			// The time to show the alert is finished, ahor the alert message
-            // FIXME Disable Sound
-            // SoundManager_Tool.play(config.player.hurrySnd, true);
-
-			UserAlerts_Tool.showAlert('hurry', true);
-			alertTimeout = setTimeout(function() {
-				// The max timeout ends, stop the alert message and launch the bubble
-                // FIXME Disable Sound
-				// SoundManager_Tool.stop(config.player.hurrySnd);
-				shoot();
-				UserAlerts_Tool.removeAlert();
-			}, config.player.timeToShowHurry);
-		}, config.player.timeToShoot);
-	};
+	// var resetHurry = function() {
+	// 	if (hurryTimeout !== null) {
+	// 		clearTimeout(hurryTimeout);
+	// 	}
+	// 	if (alertTimeout !== null) {
+	// 		clearTimeout(alertTimeout);
+	// 		UserAlerts_Tool.removeAlert();
+     //        // FIXME Disable Sound
+	// 		// SoundManager_Tool.stop(config.player.hurrySnd);
+	// 	}
+	// 	hurryTimeout = setTimeout(function() {
+	// 		// The time to show the alert is finished, ahor the alert message
+     //        // FIXME Disable Sound
+     //        // SoundManager_Tool.play(config.player.hurrySnd, true);
+    //
+	// 		UserAlerts_Tool.showAlert('hurry', true);
+	// 		alertTimeout = setTimeout(function() {
+	// 			// The max timeout ends, stop the alert message and launch the bubble
+     //            // FIXME Disable Sound
+	// 			// SoundManager_Tool.stop(config.player.hurrySnd);
+	// 			shoot();
+	// 			UserAlerts_Tool.removeAlert();
+	// 		}, config.player.timeToShowHurry);
+	// 	}, config.player.timeToShoot);
+	// };
 
 	return {
 		/**
@@ -226,7 +228,7 @@ var Player_Controller = (function(inCompressor) {
                 // FIXME Disable Sound
 				// SoundManager_Tool.play(config.player.winSnd);
 
-				// Stop all the timmers in order to stop all the animations
+				// Stop all the timers in order to stop all the animations
 				stopped = true;
 				clearTimeout(rotationLoop);
 				clearTimeout(hurryTimeout);
@@ -243,7 +245,7 @@ var Player_Controller = (function(inCompressor) {
 		},
 
 		/**
-		  * This method shoudl be called when the game ends and the user lost it :(
+		  * This method should be called when the game ends and the user lost it :(
 		  *
 		  */
 		gameOver: function() {
@@ -251,7 +253,7 @@ var Player_Controller = (function(inCompressor) {
                 // FIXME Disable Sound
 				// SoundManager_Tool.play(config.player.gameOverSnd);
 
-				// Stop all the timmers in order to stop all the animations
+				// Stop all the timers in order to stop all the animations
 				stopped = true;
 				clearTimeout(rotationLoop);
 				clearTimeout(hurryTimeout);
@@ -294,13 +296,14 @@ var Player_Controller = (function(inCompressor) {
 			rotateObserver();
 
 			// Initialize the hurry alert method
-			resetHurry();
+            // FIXME hurry disabled
+			// resetHurry();
 
 			// Add the events to detect the keys for user controllers
 			document.addEventListener('keydown', function(inEvent) {
 				if (!stopped) {
 					switch (inEvent.keyCode) {
-						// Trigget key
+						// Trigger key
 						case config.player.controls.trigger:
 						case config.player.controls.secondTrigger:
 							shoot();

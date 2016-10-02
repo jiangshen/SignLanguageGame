@@ -3,8 +3,8 @@
   * Date: 2012-03-25
   *
   * This is a global object that contains all the different bubbles
-  * levels strcutures
-  * The main key of the main object is the level number, and sould be consecutive numbers,
+  * levels structures
+  * The main key of the main object is the level number, and should be consecutive numbers,
   * and each value are the level bubbles positions as an array of objects. Each position
   * object should be specify with the column and row of the bubble to draw.
   * After add a new level, update the config.game.totalLevels var
