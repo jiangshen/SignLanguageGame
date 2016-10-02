@@ -133,7 +133,7 @@ var Game_Controller = (function() {
 				// Show the alert, wait tree seconds, and launch the next level
 				UserAlerts_Tool.showAlert('winner', false);
 
-				// Wait for tree seconds, and launch the next level
+				// Wait for three seconds, and launch the next level
 				setTimeout(function() {
 					my.init(currentLevel + 1);
 				}, 3000);
@@ -153,7 +153,7 @@ var Game_Controller = (function() {
 			compressor.gameOver();
 			player.gameOver();
 
-			// Wait for tree seconds, and relaunch the level
+			// Wait for three seconds, and relaunch the level
 			setTimeout(function() {
 				my.init(currentLevel);
 			}, 3000);
@@ -209,6 +209,8 @@ var Game_Controller = (function() {
 			// Launch the compressor
 			compressor = new Compressor_Controller(this.win, this.gameOver, this);
 			compressor.init(currentLevel);
+            // FIXME STOP THE COMPRESSOR AT INIT
+            compressor.stop();
 
 			// Launch the player, images, events, etc.
 			player = new Player_Controller(compressor);
