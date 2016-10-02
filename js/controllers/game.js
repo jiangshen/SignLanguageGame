@@ -214,6 +214,7 @@ var Game_Controller = (function() {
 			player = new Player_Controller(compressor);
 			player.init();
 
+            // FIXME disabled credits
 			// showCredits();
 		}
 	};

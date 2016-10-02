@@ -286,7 +286,7 @@ var BubblesGrid_Controller = (function(inWinFunc, inGameOverFunc, inGameControll
 	// Public scope
 	var my = {
 		/**
-		  * This method check if a given bubble crash againsth the bubbles grid
+		  * This method check if a given bubble crash against the bubbles grid
 		  * and returns true in that case
 		  *
 		  * @param inBubble <object>: The Bubble_Controller object to be checked

@@ -61,7 +61,7 @@ var config = {
 	// The configuration for Player_Controller
 	player: {
 		// The code of the keys to control the player
-		constrols: {
+		controls: {
 			left: 37,
 			right: 39,
 			trigger: 38,
@@ -85,7 +85,7 @@ var config = {
 			leftAnimationFrom: 19,
 			// The position of the image where ends the animation to move to the left the shooter
 			leftAnimationTo: 0,
-			// The time between frames in miliseconds
+			// The time between frames in milliseconds
 			loopTime: 10
 		},
 		// Winner image animation attributes
@@ -109,7 +109,7 @@ var config = {
 		timeToShoot: 5000,
 		// The time to wait after a shoot to show the "hurry" alert
 		timeToShowHurry: 2000,
-		// Sound file for the hurry alert
+        // Sound file for the hurry alert
 		hurrySnd: 'snd/hurry.ogg',
 		// Sound to be played when the user win the game
 		winSnd: 'snd/win.ogg',
@@ -117,7 +117,7 @@ var config = {
 		gameOverSnd: 'snd/lose.ogg',
 		// Sound to be played when on each shoot
 		shotSnd: 'snd/launch.ogg',
-		// The time in miliseconds for rotate a degree the shooter, determinates the angular speed
+		// The time in milliseconds for rotate a degree the shooter, determines the angular speed
 		rotationSpeedLoop: 8
 	},
 
@@ -138,7 +138,7 @@ var config = {
 		x: 200,
 		// Initial position on the Y axe
 		initY: -3,
-		// Time in ms between compresor movements
+		// Time in ms between compressor movements
 		baseLoopTime: 30000,
 		// Time in ms to decrease the baseLoopTime each level: baseLoopTime = timeToDecreaseByLevel * level
 		timeToDecreaseByLevel: 1500,
@@ -146,7 +146,7 @@ var config = {
 		height: 51,
 		// Sound to be played each movement
 		newRootSnd: 'snd/new_root.ogg',
-		// Extensor iamge configuration parameters
+		// Extensor image configuration parameters
 		extensor: {
 			x: 233,
 			width: 188,

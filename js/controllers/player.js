@@ -301,18 +301,18 @@ var Player_Controller = (function(inCompressor) {
 				if (!stopped) {
 					switch (inEvent.keyCode) {
 						// Trigget key
-						case config.player.constrols.trigger:
-						case config.player.constrols.secondTrigger:
+						case config.player.controls.trigger:
+						case config.player.controls.secondTrigger:
 							shoot();
 							break;
 	
 						// Left key
-						case config.player.constrols.left:
+						case config.player.controls.left:
 							moveToLeft();
 							break;
 	
 						// Right key
-						case config.player.constrols.right:
+						case config.player.controls.right:
 							moveToRight();
 							break;
 					}
