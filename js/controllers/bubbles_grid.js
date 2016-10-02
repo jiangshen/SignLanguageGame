@@ -273,7 +273,8 @@ var BubblesGrid_Controller = (function(inWinFunc, inGameOverFunc, inGameControll
 				downGroup(bubblesInGroup);
 				removeBalls();
 			} else {
-				SoundManager_Tool.play(config.bubblesGrid.stickBubbleSnd);
+                // FIXME Disable Sound
+				// SoundManager_Tool.play(config.bubblesGrid.stickBubbleSnd);
 
 				if (checkBallOutOfLimits(inBubbleInfo)) {
 					inGameOverFunc();

@@ -120,7 +120,8 @@ var Player_Controller = (function(inCompressor) {
 	  *
 	  */
 	var shoot = function() {
-		SoundManager_Tool.play(config.player.shotSnd);
+        // FIXME Disable Sound
+		// SoundManager_Tool.play(config.player.shotSnd);
 
 		// Move the ball into the chamber to the shooter
 		chargeChamberBall();
@@ -196,16 +197,19 @@ var Player_Controller = (function(inCompressor) {
 		if (alertTimeout !== null) {
 			clearTimeout(alertTimeout);
 			UserAlerts_Tool.removeAlert();
-			SoundManager_Tool.stop(config.player.hurrySnd);
+            // FIXME Disable Sound
+			// SoundManager_Tool.stop(config.player.hurrySnd);
 		}
 		hurryTimeout = setTimeout(function() {
 			// The time to show the alert is finished, ahor the alert message
-			SoundManager_Tool.play(config.player.hurrySnd, true);
+            // FIXME Disable Sound
+            // SoundManager_Tool.play(config.player.hurrySnd, true);
 
 			UserAlerts_Tool.showAlert('hurry', true);
 			alertTimeout = setTimeout(function() {
-				// The max timeout ends, stop the aler message and launch the bubble
-				SoundManager_Tool.stop(config.player.hurrySnd);
+				// The max timeout ends, stop the alert message and launch the bubble
+                // FIXME Disable Sound
+				// SoundManager_Tool.stop(config.player.hurrySnd);
 				shoot();
 				UserAlerts_Tool.removeAlert();
 			}, config.player.timeToShowHurry);
@@ -219,7 +223,8 @@ var Player_Controller = (function(inCompressor) {
 		  */
 		win: function() {
 			if (!stopped) {
-				SoundManager_Tool.play(config.player.winSnd);
+                // FIXME Disable Sound
+				// SoundManager_Tool.play(config.player.winSnd);
 
 				// Stop all the timmers in order to stop all the animations
 				stopped = true;
@@ -243,7 +248,8 @@ var Player_Controller = (function(inCompressor) {
 		  */
 		gameOver: function() {
 			if (!stopped) {
-				SoundManager_Tool.play(config.player.gameOverSnd);
+                // FIXME Disable Sound
+				// SoundManager_Tool.play(config.player.gameOverSnd);
 
 				// Stop all the timmers in order to stop all the animations
 				stopped = true;
