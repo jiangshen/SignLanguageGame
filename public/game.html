@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Frozen Bubble Game</title>
+		<!-- stylesheets -->
+		<link rel="stylesheet" href="css/styles.css" type="text/css">
+        <!-- scripts to be loaded before body -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/app.js"></script>
+		<!-- javascript - The next lines should be minified -->
+		<script src="js/config.js"></script>
+		<script src="js/tools/animated_image.js"></script>
+		<script src="js/tools/text.js"></script>
+		<script src="js/tools/sound_manager.js"></script>
+		<script src="js/tools/user_alerts.js"></script>
+		<script src="js/level_temp/levels.js"></script>
+		<script src="js/controllers/bubble.js"></script>
+		<script src="js/controllers/game.js"></script>
+		<script src="js/controllers/compressor.js"></script>
+		<script src="js/controllers/bubbles_grid.js"></script>
+		<script src="js/controllers/player.js"></script>
+		<script src="js/frozen_bubble.js"></script>
+	</head>
+	<body>
+		<div id="main_canvas"></div>
+        <div id="below" style="display: block; position: fixed; top: 10px; right: 37%;">
+            <div id="welcomeTextWrapper"></div>
+            <h1 class="title-red">Current Word</h1>
+            <label id="txt_word"></label>
+            <h2 class="title-purple">Remaining Words</h2>
+            <div id="wordListWrapper"></div>
+        </div>
+        <!-- Rest of the scripts  -->
+        <script src="js/showvideos.js"></script>
+	</body>
+</html>

@@ -5,7 +5,71 @@
 
 html, body {
 	/*background: #28323e;*/
-    background: #1b2228;
+    font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #2d4259;
+}
+
+.title-green {
+    width: 220px;
+    line-height: 43px;
+    /*margin: 50px auto 20px;*/
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background: #d7604b;
+    border-radius: 3px;
+    /*colors used to be dc745e to d45742*/
+    background-image: -webkit-linear-gradient(top, #7dbe52, #60a83a);
+    background-image: -moz-linear-gradient(top, #7dbe52, #60a83a);
+    background-image: -o-linear-gradient(top, #7dbe52, #60a83a);
+    background-image: linear-gradient(to bottom, #7dbe52, #60a83a);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.title-red {
+    width: 220px;
+    line-height: 43px;
+    /*margin: 50px auto 20px;*/
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background: #d7604b;
+    border-radius: 3px;
+    /*colors used to be dc745e to d45742*/
+    background-image: -webkit-linear-gradient(top, #dc745e, #d45742);
+    background-image: -moz-linear-gradient(top, #dc745e, #d45742);
+    background-image: -o-linear-gradient(top, #dc745e, #d45742);
+    background-image: linear-gradient(to bottom, #dc745e, #d45742);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.title-purple{
+    width: 220px;
+    line-height: 43px;
+    /*margin: 50px auto 20px;*/
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background: #d7604b;
+    border-radius: 3px;
+    /*colors used to be dc745e to d45742*/
+    background-image: -webkit-linear-gradient(top, #bb5ddc, #ac42d5);
+    background-image: -moz-linear-gradient(top, #bb5ddc, #ac42d5);
+    background-image: -o-linear-gradient(top, #bb5ddc, #ac42d5);
+    background-image: linear-gradient(to bottom, #bb5ddc, #ac42d5);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /**
@@ -21,6 +85,19 @@ div#main_canvas {
 	/*left: 50%;*/
 	/*right: 50%;*/
     /*margin: -320px -240px -240px -320px;*/
+    box-shadow: 0 0 12px 2px rgba(52, 195, 255, 1);
+}
+
+div#below {
+    color: white;
+    text-align: center;
+}
+
+div#below label {
+    font-size: 18px;
+}
+
+.vidFrame {
     box-shadow: 0 0 12px 2px rgba(52, 195, 255, 1);
 }
 

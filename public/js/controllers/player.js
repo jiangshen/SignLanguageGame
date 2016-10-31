@@ -306,6 +306,8 @@ var Player_Controller = (function(inCompressor) {
 						// Trigger key
 						case config.player.controls.trigger:
 						case config.player.controls.secondTrigger:
+						    // TODO here is where shoot key is pressed
+						    nextWord();
 							shoot();
 							break;
 	
