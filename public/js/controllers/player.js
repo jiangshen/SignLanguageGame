@@ -101,7 +101,7 @@ var Player_Controller = (function(inCompressor) {
 					shooter.rotate(--shooterRotatedDeg);
 				}
 			}
-	
+
 			if (currentMovement == 'right') {
 				if (shooterRotatedDeg != config.shooter.maxRotationDegRight) {
 					shooter.rotate(++shooterRotatedDeg);
@@ -166,6 +166,10 @@ var Player_Controller = (function(inCompressor) {
 		chamberBubble.moveTo(
 			config.shooter.left + (config.shooter.width / 2) - (config.bubbles.width / 2),
 			config.shooter.top + config.shooter.height - 10);
+
+		// TODO gets the bubble color
+        var colorStr = getColorFromType(chamberBubble.getType());
+        console.log(colorStr);
 	};
 
 	/**
@@ -301,7 +305,7 @@ var Player_Controller = (function(inCompressor) {
 
 			// Add the events to detect the keys for user controllers
 			document.addEventListener('keydown', function(inEvent) {
-				if (!stopped) {
+				if (!stopped && !isDone) {
 					switch (inEvent.keyCode) {
 						// Trigger key
 						case config.player.controls.trigger:
@@ -310,12 +314,12 @@ var Player_Controller = (function(inCompressor) {
 						    nextWord();
 							shoot();
 							break;
-	
+
 						// Left key
 						case config.player.controls.left:
 							moveToLeft();
 							break;
-	
+
 						// Right key
 						case config.player.controls.right:
 							moveToRight();
@@ -330,3 +334,23 @@ var Player_Controller = (function(inCompressor) {
 		}
 	};
 });
+
+function getColorFromType(colorCode) {
+    if (colorCode == 0) {
+        return "BLACK";
+    } else if (colorCode == 1) {
+        return "BLUE";
+    } else if (colorCode == 2) {
+        return "GREEN";
+    } else if (colorCode == 3) {
+        return "ORANGE";
+    } else if (colorCode == 4) {
+        return "PURPLE";
+    } else if (colorCode == 5) {
+        return "RED";
+    } else if (colorCode == 6) {
+        return "WHITE";
+    } else if (colorCode == 7) {
+        return "YELLOW";
+    }
+}

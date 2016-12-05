@@ -180,6 +180,8 @@ var BubblesGrid_Controller = (function(inWinFunc, inGameOverFunc, inGameControll
 	  */
 	var checkIfExistGroup = function(inBubbleInfo) {
 		var currentType = inBubbleInfo.bubble.getType();
+		//TODO
+		// console.log(currentType);
 		var retBubbles = {};
 		for (bubble in bubblesTmp) {
 			// Check if exist one of the adjacent bubbles have the same type, and in this
@@ -396,8 +398,8 @@ var BubblesGrid_Controller = (function(inWinFunc, inGameOverFunc, inGameControll
 					colours[type] = true;
 				}
 			}
-
-			return Object.keys(colours);
+            // console.log(Object.keys(colours));
+            return Object.keys(colours);
 		},
 
 		/**

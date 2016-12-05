@@ -35,12 +35,9 @@ var levels = {
 		row: 2,
 		col: 4
 	}, {
-		row: 3,
-		col: 3.5
-	}, {
-		row: 4,
-		col: 4
-	}],
+        row: 3,
+        col: 4
+    }],
 	2: [{
 		row: 0,
 		col: 4

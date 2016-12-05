@@ -131,6 +131,7 @@ var Bubble_Controller = (function(inX, inY, inType) {
 		  *
 		  */
 		getImage: function() {
+		    // console.log(image);
 			return image;
 		},
 
@@ -143,6 +144,7 @@ var Bubble_Controller = (function(inX, inY, inType) {
 			var frozeImage = new AnimatedImage_Tool('bubble_frozzen');
 			frozeImage.init();
 			frozeImage.setPos(image.getX() - 1, image.getY() - 1);
+            console.log(frozeImage);
 			frozeImage.show();
 		},
 

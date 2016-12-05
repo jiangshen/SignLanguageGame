@@ -54,6 +54,8 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	var setAnimationImage = function(inPosition) {
 		var position = inPosition * divElm.offsetWidth;
 
+		// console.log("HERE: " + inPosition);
+
 		divElm.style.setProperty('background-position', '-' + position + 'px 0px');
 	};
 
@@ -184,7 +186,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 	  *		topLeft: { // The top left point
 	  *			x: <int>, // The pixels of the X axe of the point
 	  *			y: <int>}, // The pixels of the Y axe of the point
-	  *		bottRight: { // The bottom right point
+	  *		bottomRight: { // The bottom right point
 	  *			x: <int>, // The pixels of the X axe of the point
 	  *			y: <int>}} // The pixels of the Y axe of the point
 	  *
@@ -233,7 +235,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 
 		/**
 		  * This class resets the animation in order to display the original image, and removes
-		  * the "hd" class if isset
+		  * the "hd" class if it is set
 		  *
 		  */
 		show: function() {
@@ -242,7 +244,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		},
 
 		/**
-		  * Returns the current position in pixels on the X axe, the point considereer is the
+		  * Returns the current position in pixels on the X axe, the point in consideration is the
 		  * top left point of the div
 		  *
 		  * @return <int>: The number of pixels from the origin os the X axe
@@ -253,7 +255,7 @@ var AnimatedImage_Tool = (function(inClass, inStartPosition, inTimeInterval, inN
 		},
 
 		/**
-		  * Returns the current position in pixels on the Y axe, the point considereer is the
+		  * Returns the current position in pixels on the Y axe, the point in consideration is the
 		  * top left point of the div
 		  *
 		  * @return <int>: The number of pixels from the origin os the Y axe

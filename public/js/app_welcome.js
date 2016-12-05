@@ -1,6 +1,20 @@
 // On Load
 $(document).ready(function() {
     $('#btn_begin').click(transition);
+    document.addEventListener('keyup', function(inEvent) {
+        switch (inEvent.keyCode) {
+            // enter key is released
+            case 13:
+                transition();
+                break;
+        }
+    });
+
+    var name = localStorage.getItem("name");
+    if (name !== "") {
+        $('#txt_name').val(name);
+        $('#txt_words').focus();
+    }
 });
 
 function transition() {

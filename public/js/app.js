@@ -9,9 +9,14 @@ var wordsIndex = 0;
 var currWord;
 var wordListHTMLArray = [];
 
-function init() {
-    $('#welcomeTextWrapper').html("<h1 class='title-green'>Welcome " + localStorage.getItem('name') + "</h1>");
+var isFinished = false;
+var isDone = false;
 
+var gamePlayedOnce;
+
+function init() {
+
+    $('#welcomeTextWrapper').html("<h1 class='title-green'>Welcome " + localStorage.getItem('name') + "</h1>");
     wordsArray = JSON.parse(localStorage.getItem('words'));
 
     // populate word lists
@@ -22,8 +27,12 @@ function init() {
 }
 
 function nextWord() {
+    if (isFinished) {
+        gameEnd();
+    }
     if (wordsIndex >= wordsArray.length) {
         $('#txt_word').text("Reached end of the list");
+        isFinished = true;
         return;
     }
     currWord = wordsArray[wordsIndex];
@@ -37,4 +46,13 @@ function nextWord() {
     }
     $('#wordListWrapper').html(wordListHTML);
     showVideos();
+}
+
+function gameEnd() {
+    isDone = true;
+    gamePlayedOnce = true;
+    UserAlerts_Tool.showAlert('winner', false);
+    setTimeout(function() {
+        window.location.href = "index.html";
+    }, 1000);
 }
