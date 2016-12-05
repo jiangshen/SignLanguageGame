@@ -48,6 +48,18 @@ function nextWord() {
     showVideos();
 }
 
+function setNextColor() {
+    // alert(colorStrQueue.length);
+    var cW = localStorage.getItem("currentWord");
+    if (colorStrQueue.length == 1) {
+        cW = cW + " = " + colorStrQueue[0];
+    } else {
+        cW = cW + " = " + colorStrQueue.shift();
+    }
+    $('#txt_word').text(cW);
+    $(this).css('color', 'red');
+}
+
 function gameEnd() {
     isDone = true;
     gamePlayedOnce = true;

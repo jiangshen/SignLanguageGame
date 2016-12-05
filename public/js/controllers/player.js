@@ -1,3 +1,5 @@
+var colorStrQueue = [];
+
 /**
   * Author: Alonso Vidales <alonso.vidales@tras2.es>
   * Date: 2012-03-25
@@ -168,8 +170,11 @@ var Player_Controller = (function(inCompressor) {
 			config.shooter.top + config.shooter.height - 10);
 
 		// TODO gets the bubble color
-        var colorStr = getColorFromType(chamberBubble.getType());
+        colorStr = getColorFromType(chamberBubble.getType());
+        // localStorage.setItem('colors', currWord);
         console.log(colorStr);
+        colorStrQueue.push(colorStr);
+        setNextColor();
 	};
 
 	/**

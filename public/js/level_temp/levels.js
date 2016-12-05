@@ -15,11 +15,17 @@
 var levels = {
 	1: [{
 		row: 0,
-		col: 3
+		col: 2
 	}, {
 		row: 0,
-		col: 4
+		col: 3
 	}, {
+        row: 0,
+        col: 4
+    }, {
+        row: 0,
+        col: 5
+    }, {
 		row: 1,
 		col: 4.5
 	}, {
@@ -34,10 +40,7 @@ var levels = {
 	}, {
 		row: 2,
 		col: 4
-	}, {
-        row: 3,
-        col: 4
-    }],
+	}],
 	2: [{
 		row: 0,
 		col: 4
