@@ -38,7 +38,6 @@ function nextWord() {
     currWord = wordsArray[wordsIndex];
     $('#txt_word').text(currWord);
     localStorage.setItem('currentWord', currWord);
-
     wordsIndex++;
     var wordListHTML = "";
     for (var i = wordsIndex; i < wordListHTMLArray.length; i++) {
@@ -51,13 +50,43 @@ function nextWord() {
 function setNextColor() {
     // alert(colorStrQueue.length);
     var cW = localStorage.getItem("currentWord");
+    var color = "";
     if (colorStrQueue.length == 1) {
-        cW = cW + " = " + colorStrQueue[0];
+        color = colorStrQueue[0];
     } else {
-        cW = cW + " = " + colorStrQueue.shift();
+        color = colorStrQueue.shift();
     }
-    $('#txt_word').text(cW);
-    $(this).css('color', 'red');
+    // cW = cW + " = " + color;
+    // $('#txt_word').text(cW);
+    $('#txt_word_color').text("{ "+color+" }");
+    switch (color) {
+        case "RED":
+            $('#txt_word_color').css('color', '#d64f5a');
+            break;
+        case "BLUE":
+            $('#txt_word_color').css('color', '#1b97ee');
+            break;
+        case "BLACK":
+            $('#txt_word_color').css('color', '#000000');
+            break;
+        case "GREEN":
+            $('#txt_word_color').css('color', '#5bec83');
+            break;
+        case "PURPLE":
+            $('#txt_word_color').css('color', '#d655f6');
+            break;
+        case "YELLOW":
+            $('#txt_word_color').css('color', '#ecd427');
+            break;
+        case "ORANGE":
+            $('#txt_word_color').css('color', '#fa733e');
+            break;
+        case "WHITE":
+            $('#txt_word_color').css('color', '#ffffff');
+            break;
+        default:
+            break;
+    }
 }
 
 function gameEnd() {
